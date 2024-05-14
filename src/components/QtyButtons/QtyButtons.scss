@@ -1,0 +1,38 @@
+@import './../functions/functions';
+
+
+.quantity_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: toRem(40);
+    width: toRem(84);
+    border-radius: 12px;
+    overflow: hidden;
+
+    background: var(--grey-color);
+
+    @include screen(tablet) {
+        height: toRem(30);
+        width: toRem(74);
+        border-radius: 8px;
+    }
+}
+
+.minus-button, .plus-button {
+    padding: toRem(9) toRem(12);
+    border-radius: 12px;
+
+    transition: background-color ease-in 0.1s;
+
+    @include hover-supported () {
+        &:hover {
+            background: var(--main-accent-color);
+        }
+    }
+
+    &:active {
+        background: var(--button-pressed);
+    }
+}
